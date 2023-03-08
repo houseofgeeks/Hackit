@@ -18,10 +18,10 @@ const userSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    team:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Team'
-    }
+    team: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Team",
+    },
   },
   { timestamps: true }
 );
