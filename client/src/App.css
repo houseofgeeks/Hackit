@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.home,.loading,.login,.profile,.problems{
+  background:radial-gradient(ellipse at bottom,#1b2735,#090a0f)
+}
+.title{
+  background: -webkit-linear-gradient(white,#38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
