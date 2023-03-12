@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div className="py-4 px-20 w-full flex justify-between items-center">
       <Link to={'/'}>
-        <div className="text-white text-3xl font-bold title">HACKIT</div>
+        <div className="text-white text-3xl font-bold title">HOUSE OF HACKERS</div>
       </Link>
 
       <div>
