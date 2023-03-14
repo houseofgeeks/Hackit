@@ -1,7 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const generateToken = require("../config/token");
 const User = require("../models/user_model");
-const jwt= require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const {
   handleEmail,
@@ -17,13 +17,13 @@ const registerUser = asyncHandler(async (req, res) => {
   const password = handlePass();
   //if all the fields are empty
   if (!name || !email || !password) {
-    res.status(400).json({ error: "Please fill in all the input fields" });
+    res.status(400).json({ "message": "Please fill in all the input fields" });
   }
 
   //if email is already registered
   const userExists = await User.findOne({ email });
   if (userExists) {
-    res.status(400).json({ error: "User with this email already exists" });
+    return res.status(400).json({ "message": "User with this email already exists" });
   }
 
   //salting the password
@@ -34,7 +34,7 @@ const registerUser = asyncHandler(async (req, res) => {
     name,
     email,
     password: bcrypt.hashSync(password, salt),
-    team:null,
+    team: null,
   });
   //saving the user
   const result = user.save();
@@ -53,7 +53,7 @@ const registerUser = asyncHandler(async (req, res) => {
   }
   //if the user does not gets registered for any reason
   else {
-    res.status(400).json({ error: "Failed to create the user" });
+    res.status(400).json({ "message": "Failed to create the user" });
   }
 });
 
@@ -65,7 +65,7 @@ const authUser = asyncHandler(async (req, res) => {
   const userFound = await User.findOne({ email });
   //comparing the password
   if (!userFound) {
-    res.status(400).json({ error: "invalid credentials" });
+    res.status(400).json({ "message": "invalid credentials" });
     return;
   }
   if (bcrypt.compareSync(password, userFound.password)) {
@@ -79,27 +79,26 @@ const authUser = asyncHandler(async (req, res) => {
       token: generateToken(userFound.id),
     });
   } else {
-    res.status(400).json({ error: "Invalid Credentials" });
+    res.status(400).json({ "message": "Invalid Credentials" });
   }
 });
 
 const protect = asyncHandler(async (req, res) => {
-  let token=req.query.token;
+  let token = req.query.token;
 
-
-    try {
-      // console.log(token);
-      //decodes token id
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      // console.log(decoded);
-      req.user = await User.findById(decoded.id).select("-password");
-      // console.log(req.user);
-      res.status(200).send(JSON.stringify(req.user));
-      // next();
-    } catch (error) {
-      res.status(401).send("Not authorized, token failed");
-      // throw new Error("Not authorized, token failed");
-    }
-  });
+  try {
+    // console.log(token);
+    //decodes token id
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    // console.log(decoded);
+    req.user = await User.findById(decoded.id).select("-password");
+    // console.log(req.user);
+    res.status(200).send(JSON.stringify(req.user));
+    // next();
+  } catch (error) {
+    res.status(401).send("Not authorized, token failed");
+    // throw new Error("Not authorized, token failed");
+  }
+});
 // const fogotPassword = asyncHandler(async(req, res))
 module.exports = { registerUser, authUser, protect };
