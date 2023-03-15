@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { userOtpVerify } from "../../redux/actions.js/userAction";
 import Message from "../Message";
 import Stars from "../Stars";
 
@@ -8,19 +9,14 @@ const Validate = () => {
   const userOtp = useSelector((state) => state.userOtp);
   const { loading, otpData, error } = userOtp;
 
+  const dispatch = useDispatch();
   const verifyOtp = () => {
-    console.log(otpData.otp);
-    console.log(enteredOtp);
-    if (Number(enteredOtp) === otpData.otp) {
-      console.log("Match");
-    } else {
-      console.log("fuvkl");
-    }
+    dispatch(userOtpVerify(enteredOtp))
   };
   return (
     <div className="login w-full h-[100vh] relative">
       {error && <Message type={"error"} message={error} />}
-      {otpData && <Message type={"success"} message={otpData.message} />}
+      {otpData?.message && <Message type={"success"} message={otpData.message} />}
       <Stars />
       <div className="flex justify-center items-center w-full h-full">
         <div className="w-[400px] h-[300px] bg-gradient-to-tr flex items-center flex-col justify-evenly from-slate-300 to-gray-200 rounded-lg">

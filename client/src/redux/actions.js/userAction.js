@@ -29,8 +29,8 @@ export const userLogout = () => (dispatch) => {
   localStorage.removeItem("hackUser");
 };
 
-export const userOtpRequest = (name,email,password) => async (dispatch) => {
-  dispatch({type:'USER_OTP_REQUEST'})
+export const userOtpRequest = (name, email, password) => async (dispatch) => {
+  dispatch({ type: "USER_OTP_REQUEST" });
   try {
     const config = {
       headers: {
@@ -42,10 +42,33 @@ export const userOtpRequest = (name,email,password) => async (dispatch) => {
       { name, email, password },
       config
     );
+    localStorage.setItem("otp", JSON.stringify(data));
+
     dispatch({ type: "USER_OTP_SUCCESS", payload: data });
 
     console.log(data);
-
+  } catch (error) {
+    dispatch({
+      type: "USER_OTP_FAILURE",
+      payload: error?.response?.data.message,
+    });
+  }
+};
+export const userOtpVerify = (otp) => (dispatch) => {
+  const generatedOtp = JSON.parse(localStorage.getItem("otp"));
+  console.log(generatedOtp);
+  try {
+    if (generatedOtp.otp === Number(otp)) {
+      dispatch({
+        type: "USER_OTP_SUCCESS",
+        payload: { message: "Signed in Successfully" },
+      });
+    } else {
+      dispatch({
+        type: "USER_OTP_FAILURE",
+        payload: "OTP does not match",
+      });
+    }
   } catch (error) {
     dispatch({
       type: "USER_OTP_FAILURE",

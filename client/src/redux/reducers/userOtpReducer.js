@@ -1,4 +1,4 @@
-export const userOtpReducer = (state = {}, action) => {
+export const userOtpReducer = (state = {otpData : {}}, action) => {
     switch (action.type) {
       case "USER_OTP_REQUEST":
         return { loading: true };

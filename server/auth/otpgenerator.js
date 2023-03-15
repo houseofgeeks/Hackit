@@ -43,7 +43,7 @@ const otpGenerator = asyncHandler(async (req, res) => {
     if (error) {
       return res.status(500).json({"message":`Couldn't find email:${email}`})
     } else {
-      res.status(200).json({message:`OTP has been sent to ${email}`,otp,email});
+      res.status(200).json({message:`OTP has been sent to ${email}`,otp,email,name,password});
     }
   });
 });
