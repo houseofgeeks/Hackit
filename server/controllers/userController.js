@@ -3,18 +3,11 @@ const generateToken = require("../config/token");
 const User = require("../models/user_model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const {
-  handleEmail,
-  hanldeName,
-  handlePass,
-  handleOtp,
-} = require("../auth/otpgenerator");
+const nodemailer=require("nodemailer")
 //creating a new user
 const registerUser = asyncHandler(async (req, res) => {
   // const {name,email,password} = req.body
-  const email = handleEmail();
-  const name = hanldeName();
-  const password = handlePass();
+  const {name,email,password}=req.body;
   //if all the fields are empty
   if (!name || !email || !password) {
     res.status(400).json({ "message": "Please fill in all the input fields" });
@@ -38,23 +31,35 @@ const registerUser = asyncHandler(async (req, res) => {
   });
   //saving the user
   const result = user.save();
+  const url=`https://houseofhackers-server.vercel.app/verify/${email}`
+  var transporter = nodemailer.createTransport({
+    host: process.env.TRANS_EMAIL,
+    port: process.env.TRANS_PORT,
+    secure: process.env.BOOL,
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.KEY,
+    },
+  });
 
-  //if the user gets registered then res the document
-  if (result) {
-    res.status(201).json({
-      _id: user.id,
-      name: user.name,
-      isAdmin: user.isAdmin,
-      team: user.team,
-      email: user.email,
-      password: user.password,
-      token: generateToken(user.id),
-    });
-  }
+  var mailOptions = {
+    from: process.env.EMAIL,
+    to: email,
+    subject: "Verification",
+    text: `Please Click on the below URL to verify your email ${url}`,
+  };
+
+  transporter.sendMail(mailOptions, async (error, info)=> {
+    if (error) {
+      return res.status(500).json({"message":`Couldn't find email:${email}`})
+    } else {
+      res.status(200).json({message:`Verification mail has been sent to ${email}`});
+    }
+  });
+
+  
   //if the user does not gets registered for any reason
-  else {
-    res.status(400).json({ "message": "Failed to create the user" });
-  }
+  
 });
 
 //verifying a user
@@ -83,22 +88,15 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-const protect = asyncHandler(async (req, res) => {
-  let token = req.query.token;
-
-  try {
-    // console.log(token);
-    //decodes token id
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    // console.log(decoded);
-    req.user = await User.findById(decoded.id).select("-password");
-    // console.log(req.user);
-    res.status(200).send(JSON.stringify(req.user));
-    // next();
-  } catch (error) {
-    res.status(401).send("Not authorized, token failed");
-    // throw new Error("Not authorized, token failed");
+const verifyUser = asyncHandler(async (req, res) => {
+  const { email } = req.params;
+  const user=await User.findOne({email})
+  if(user){
+    user.isVerified=true
+    await user.save()
+    res.status(200).json({message:"User Verified"})
+  }else{
+    res.status(400).json({message:"User not found"})
   }
-});
-// const fogotPassword = asyncHandler(async(req, res))
-module.exports = { registerUser, authUser, protect };
+})
+module.exports = { registerUser, authUser ,verifyUser};

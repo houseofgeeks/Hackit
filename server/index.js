@@ -20,7 +20,7 @@ app.use("/api/user", userRoutes);
 app.use("/api/team", teamRoutes);
 app.use("/api/submission", solutionRoutes);
 app.use("/api/problem", problemRoutes);
-
+app.use('/verify',userRoutes)
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
