@@ -4,8 +4,9 @@ const User = require("../models/user_model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const nodemailer = require("nodemailer");
-const fs=require('fs');
-const fileContent=fs.readFileSync('index.html');
+// const fs=require('fs');
+
+// const fileContent=fs.readFileSync('index.html');
 //creating a new user
 const registerUser = asyncHandler(async (req, res) => {
   // const {name,email,password} = req.body
@@ -35,7 +36,7 @@ const registerUser = asyncHandler(async (req, res) => {
   });
   //saving the user
   const result = user.save();
-  const url = `https://houseofhackers-server.vercel.app/verify/${email}`;
+  const url = `http://localhost:5000/verify/${email}`;
   var transporter = nodemailer.createTransport({
     host: process.env.TRANS_EMAIL,
     port: process.env.TRANS_PORT,
@@ -103,9 +104,52 @@ const verifyUser = asyncHandler(async (req, res) => {
   if (user) {
     user.isVerified = true;
     await user.save();
-    res.writeHead(200,{'Content-Type':'text/html'});
+    // res.writeHead(200,{'Content-Type':'text/html'});
+    res.send(`<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
     
-    res.end(fileContent);
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          .main_div {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(0, 40, 134);
+            height: 100vh;
+          }
+          button {
+            background-color: white;
+            border-radius: 12px;
+            padding: 8px 16px;
+            border: none;
+            outline: none;
+            color: black;
+            cursor: pointer;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="main_div">
+          <h1>Verified Successfully</h1>
+          <a href="https://houseofhackers.vercel.app"
+            ><button>Back to home</button></a
+          >
+        </div>
+      </body>
+    </html>
+    `)
+    
+    // res.end(fileContent);
   } else {
     res.status(400).json({ message: "User not found" });
   }
