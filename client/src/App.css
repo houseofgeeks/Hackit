@@ -1,18 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lora:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@700&family=Source+Sans+3:wght@300;400;500;600;700&family=Urbanist:wght@400;600;700&family=Varela&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.home,.loading,.login,.profile,.problems{
-  background:radial-gradient(ellipse at bottom,#1b2735,#090a0f)
+.home,
+.loading,
+.login,
+.profile,
+.problems {
+  background: radial-gradient(ellipse at bottom, #1b2735, #090a0f);
 }
-.timeline{
-  background:radial-gradient(ellipse at bottom,#090a0f,#1b2735)
-
+.timeline {
+  background: radial-gradient(ellipse at bottom, #090a0f, #1b2735);
 }
-.title{
-  background: -webkit-linear-gradient(white,#38495a);
+.title {
+  background: -webkit-linear-gradient(white, #38495a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-

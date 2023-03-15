@@ -9,12 +9,12 @@ const Prize = () => {
             img : trophy
         },
         {
-            type : '1st Prize',
+            type : '2nd Prize',
             amount : 'To Be Released',
             img : trophy
         },
         {
-            type : '1st Prize',
+            type : '3rd Prize',
             amount : 'To Be Released',
             img : trophy
         },
