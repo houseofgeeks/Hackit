@@ -2,8 +2,6 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const asyncHandler = require("express-async-handler");
 const User = require("../models/user_model");
-const Otp=require('../models/otp_model')
-// const path = require('path')
 var email, password, name, otp;
 const otpGenerator = asyncHandler(async (req, res) => {
   email = req.body.email;
@@ -45,8 +43,6 @@ const otpGenerator = asyncHandler(async (req, res) => {
     if (error) {
       console.log(error);
     } else {
-      const createOtp=await Otp.create({email,otp})
-      console.log(createOtp)
       res.status(200).json({message:`OTP has been sent to ${email}`,otp,email});
     }
   });
