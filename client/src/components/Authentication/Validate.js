@@ -1,8 +1,14 @@
+import { useSelector } from "react-redux";
+import Message from "../Message";
 import Stars from "../Stars";
 
 const Validate = () => {
+  const userOtp = useSelector((state) => state.userOtp);
+  const { loading, success, error } = userOtp;
   return (
     <div className="login w-full h-[100vh] relative">
+      {error && <Message type={"error"} message={error} />}
+      {success && <Message type={"success"} message={success} />}
       <Stars />
       <div className="flex justify-center items-center w-full h-full">
         <div className="w-[400px] h-[300px] bg-gradient-to-tr flex items-center flex-col justify-evenly from-slate-300 to-gray-200 rounded-lg">

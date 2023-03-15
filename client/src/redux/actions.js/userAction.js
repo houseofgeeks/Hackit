@@ -29,6 +29,30 @@ export const userLogout = () => (dispatch) => {
   localStorage.removeItem("hackUser");
 };
 
+export const userOtpRequest = (name,email,password) => async (dispatch) => {
+  dispatch({type:'USER_OTP_REQUEST'})
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const { data } = await axios.post(
+      `${process.env.REACT_APP_BACKEND_URI}/api/user`,
+      { name, email, password },
+      config
+    );
+    dispatch({ type: "USER_OTP_SUCCESS", payload: data.message });
+
+    console.log(data);
+
+  } catch (error) {
+    dispatch({
+      type: "USER_OTP_FAILURE",
+      payload: error?.response?.data.message,
+    });
+  }
+};
 export const userRegisterRequest =
   (name, email, password) => async (dispatch) => {
     dispatch({ type: "USER_REGISTER_REQUEST" });
