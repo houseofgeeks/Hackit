@@ -51,7 +51,7 @@ const Register = () => {
               onClick={handleSignup}
               className="bg-red-500 my-4 py-2 px-8 rounded-lg text-white font-semibold cursor-pointer text-lg hover:bg-red-600"
             >
-              Sign up
+              Send Otp
             </button>
             <p>
               Already have an account ?{" "}

@@ -42,7 +42,7 @@ export const userOtpRequest = (name,email,password) => async (dispatch) => {
       { name, email, password },
       config
     );
-    dispatch({ type: "USER_OTP_SUCCESS", payload: data.message });
+    dispatch({ type: "USER_OTP_SUCCESS", payload: data });
 
     console.log(data);
 
