@@ -2,7 +2,26 @@ import Stars from "../Stars";
 import loginLogo from "../../assets/login_rocket.json";
 import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import Message from "../Message";
+import axios from "axios";
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleLogin = async () => {
+    if (!email || !password) {
+      return;
+    }
+    try {
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URI}/api/user/login`,
+        { email, password }
+      );
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="w-full h-[100vh] login relative">
       <Stars />
@@ -14,18 +33,21 @@ const Login = () => {
             <input
               type="email"
               placeholder="Enter your email"
+              onChange={(e) => setEmail(e.target.value)}
               className="border outline-none px-3 py-2 rounded-lg focus:border-red-500 my-2 w-[300px]"
             />
             <input
               type="password"
               placeholder="Enter your password"
+              onChange={(e) => setPassword(e.target.value)}
               className="border outline-none px-3 py-2 rounded-lg focus:border-red-500 my-2 w-[300px]"
             />
-            <Link to={'/validate'}>
-              <button className="w-full bg-red-500 my-4 py-2 px-8 rounded-lg text-white font-semibold cursor-pointer text-lg hover:bg-red-600">
-                Login
-              </button>
-            </Link>
+            <button
+              onClick={handleLogin}
+              className="w-full bg-red-500 my-4 py-2 px-8 rounded-lg text-white font-semibold cursor-pointer text-lg hover:bg-red-600"
+            >
+              Login
+            </button>
             <p>
               Don't have an account ?{" "}
               <Link to={"/register"} className="text-red-500">

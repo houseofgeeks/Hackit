@@ -8,14 +8,14 @@ const Navbar = () => {
       </Link>
 
       <div>
-        {/* <Link to={'/login'}>
+        <Link to={'/login'}>
           <button className="bg-red-500 py-2 px-8 rounded-lg text-white font-semibold cursor-pointer text-lg hover:bg-red-600">
             Login
           </button>
-        </Link> */}
-        <Link to={"/profile"}>
-          <FaUserCircle className="text-white text-4xl" />
         </Link>
+        {/* <Link to={"/profile"}>
+          <FaUserCircle className="text-white text-4xl" />
+        </Link> */}
       </div>
     </div>
   );

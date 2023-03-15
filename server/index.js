@@ -10,6 +10,7 @@ const options = {
     origin : ['http://localhost:3000','https://houseofhackers.vercel.app']
 }
 const app = express();
+app.use(cors(options))
 dotenv.config();
 const PORT = 5000;
 
