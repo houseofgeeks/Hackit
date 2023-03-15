@@ -3,10 +3,12 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { userLoginReducer } from "./reducers/userLoginReducer";
 import { userRegisterReducer } from "./reducers/userRegisterReducer";
+import { userOtpReducer } from "./reducers/userOtpReducer";
 
 const reducer = combineReducers({
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
+  userOtp : userOtpReducer
 });
 
 const userInfoFromStorage = localStorage.getItem("hackUser")

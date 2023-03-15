@@ -41,7 +41,7 @@ const otpGenerator = asyncHandler(async (req, res) => {
 
   transporter.sendMail(mailOptions, async (error, info)=> {
     if (error) {
-      console.log(error);
+      return res.status(500).json({"message":`Couldn't find email:${email}`})
     } else {
       res.status(200).json({message:`OTP has been sent to ${email}`,otp,email});
     }
