@@ -38,6 +38,7 @@ const createTeam = asyncHandler(async (req, res) => {
       teamId: id,
       teamMembers: [teamLeader],
     });
+    
     const user = await User.findByIdAndUpdate(teamLeader, { team: team._id });
     const result = await team.save();
     console.log(result)
