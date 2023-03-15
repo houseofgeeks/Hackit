@@ -37,15 +37,14 @@ const otpGenerator = asyncHandler(async (req, res) => {
     from: process.env.EMAIL,
     to: email,
     subject: "Verification",
-    text: `Your ONE TIME PASSWORD(OTP) fro successfull signin is ${otp}`,
+    text: `Your ONE TIME PASSWORD(OTP) for successfull signin is ${otp}`,
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
     } else {
-      // console.log('Email sent: ' + info.response);
-      res.send(info.response);
+      res.status(200).json({"message":`OTP has been sent to ${email}`});
     }
   });
 });

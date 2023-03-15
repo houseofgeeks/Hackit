@@ -2,7 +2,16 @@ import Stars from "../Stars";
 import loginLogo from "../../assets/login_rocket.json";
 import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 const Register = () => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState('')
+
+  const handleSignup = ()=>{
+    
+  }
   return (
     <div className="w-full h-[100vh] login relative">
       <Stars />
@@ -14,19 +23,22 @@ const Register = () => {
             <input
               type="text"
               placeholder="Enter your Name"
+              onChange={(e)=>setName(e.target.value)}
               className="border outline-none px-3 py-2 rounded-lg focus:border-red-500 my-2 w-[300px]"
             />
             <input
               type="email"
               placeholder="Enter your email"
+              onChange={(e)=>setEmail(e.target.value)}
               className="border outline-none px-3 py-2 rounded-lg focus:border-red-500 my-2 w-[300px]"
             />
             <input
               type="password"
               placeholder="Enter your password"
+              onChange={(e)=>setPassword(e.target.value)}
               className="border outline-none px-3 py-2 rounded-lg focus:border-red-500 my-2 w-[300px]"
             />
-            <button className="bg-red-500 my-4 py-2 px-8 rounded-lg text-white font-semibold cursor-pointer text-lg hover:bg-red-600">
+            <button onClick={handleSignup} className="bg-red-500 my-4 py-2 px-8 rounded-lg text-white font-semibold cursor-pointer text-lg hover:bg-red-600">
               Sign up
             </button>
             <p>
