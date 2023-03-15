@@ -35,7 +35,7 @@ const registerUser = asyncHandler(async (req, res) => {
   });
   //saving the user
   const result = user.save();
-  const url = `http://localhost:5000/verify/${email}`;
+  const url = `https://houseofhackers-server.vercel.app/verify/${email}`;
   var transporter = nodemailer.createTransport({
     host: process.env.TRANS_EMAIL,
     port: process.env.TRANS_PORT,
