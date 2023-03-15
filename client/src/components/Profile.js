@@ -10,7 +10,7 @@ const Profile = () => {
       <Navbar />
       <Stars />
       <Design />
-      <div className="flex items-center justify-around w-full h-full">
+      <div className="flex items-center justify-around w-full h-[88vh]">
         <div className="w-[80%] flex justify-between h-[500px] bg-transparent">
           <TeamRegister />
           <Rules />

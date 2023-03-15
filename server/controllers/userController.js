@@ -65,7 +65,7 @@ const authUser = asyncHandler(async (req, res) => {
   const userFound = await User.findOne({ email });
   //comparing the password
   if (!userFound) {
-    res.status(400).json({ "message": "invalid credentials" });
+    res.status(400).json({ "message": "Invalid credentials" });
     return;
   }
   if (bcrypt.compareSync(password, userFound.password)) {
