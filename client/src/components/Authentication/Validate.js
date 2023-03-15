@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { userOtpVerify } from "../../redux/actions.js/userAction";
+import { useNavigate } from "react-router-dom";
+import { userOtpVerify, userRegisterRequest } from "../../redux/actions.js/userAction";
 import Message from "../Message";
 import Stars from "../Stars";
 
@@ -9,14 +10,29 @@ const Validate = () => {
   const userOtp = useSelector((state) => state.userOtp);
   const { loading, otpData, error } = userOtp;
 
+  const userRegister = useSelector((state) => state.userRegister);
+  const navigate = useNavigate(); 
   const dispatch = useDispatch();
+
+  const userData = JSON.parse(localStorage.getItem('otp'))
   const verifyOtp = () => {
-    dispatch(userOtpVerify(enteredOtp))
+    dispatch(userOtpVerify(enteredOtp));
+    if(otpData.message){
+      dispatch(userRegisterRequest(userData.name,userData.email,userData.password))
+    }
   };
+  useEffect(() => {
+    if(JSON.parse(localStorage.getItem('hackUser'))){
+      navigate('/')
+    }
+  }, [dispatch])
+  
   return (
     <div className="login w-full h-[100vh] relative">
       {error && <Message type={"error"} message={error} />}
-      {otpData?.message && <Message type={"success"} message={otpData.message} />}
+      {otpData?.message && (
+        <Message type={"success"} message={otpData.message} />
+      )}
       <Stars />
       <div className="flex justify-center items-center w-full h-full">
         <div className="w-[400px] h-[300px] bg-gradient-to-tr flex items-center flex-col justify-evenly from-slate-300 to-gray-200 rounded-lg">

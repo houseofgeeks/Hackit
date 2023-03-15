@@ -28,7 +28,7 @@ const Login = () => {
     <div className="w-full h-[100vh] login relative">
       {error && <Message type={"error"} message={error} />}
       <Stars />
-      <div className="flex justify-center items-center w-full h-full">
+      <div className="flex justify-center items-center w-full h-[99vh]">
         <div className="w-[700px] h-[400px] bg-gradient-to-tr flex items-center justify-around from-slate-300 to-gray-200 rounded-lg">
           <Lottie className="max-w-[200px]" animationData={loginLogo} />
           <div className="flex flex-col">

@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 export const userLoginRequest = (email, password) => async (dispatch) => {
   dispatch({ type: "USER_LOGIN_REQUEST" });
   try {
@@ -78,6 +78,8 @@ export const userOtpVerify = (otp) => (dispatch) => {
 };
 export const userRegisterRequest =
   (name, email, password) => async (dispatch) => {
+    const navigate = useNavigate();
+
     dispatch({ type: "USER_REGISTER_REQUEST" });
     try {
       const config = {
@@ -86,7 +88,7 @@ export const userRegisterRequest =
         },
       };
       const { data } = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URI}/api/user/register`,
+        `${process.env.REACT_APP_BACKEND_URI}/api/user/validate`,
         { name, email, password },
         config
       );
@@ -94,6 +96,7 @@ export const userRegisterRequest =
       dispatch({ type: "USER_REGISTER_SUCCESS", payload: data });
       dispatch({ type: "USER_LOGIN_SUCCESS", payload: data });
       localStorage.setItem("hackUser", JSON.stringify(data));
+      localStorage.removeItem("otp");
     } catch (error) {
       dispatch({
         type: "USER_REGISTER_FAILURE",

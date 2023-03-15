@@ -10,6 +10,7 @@ import Validate from "./components/Authentication/Validate";
 import ProblemStatement from "./pages/ProblemStatement";
 import Stars from "./components/Stars";
 import Profile from "./components/Profile";
+import Navbar from "./components/Navbar";
 function App() {
   // const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
       {/* {loading ? (
         <Loading />
       ) : ( */}
+      <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />

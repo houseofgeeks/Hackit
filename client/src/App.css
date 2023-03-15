@@ -6,6 +6,10 @@
 .home,.loading,.login,.profile,.problems{
   background:radial-gradient(ellipse at bottom,#1b2735,#090a0f)
 }
+.timeline{
+  background:radial-gradient(ellipse at bottom,#090a0f,#1b2735)
+
+}
 .title{
   background: -webkit-linear-gradient(white,#38495a);
   -webkit-background-clip: text;

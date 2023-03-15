@@ -6,7 +6,7 @@ const Navbar = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { hackUser } = userLogin;
   return (
-    <div className="py-4 px-20 w-full ">
+    <div className="py-4 px-20 w-full fixed top-0 z-20 shadow-md timeline">
       <div className="flex justify-between items-center">
         <Link to={"/"}>
           <div className="text-white text-3xl font-bold title">
