@@ -12,9 +12,14 @@ import Profile from "./components/Profile";
 import Navbar from "./components/Navbar";
 import Loader from "./components/Loader";
 import Verify from "./components/Authentication/Verify";
+import { useSelector } from "react-redux";
 function App() {
   const { pathname } = useLocation();
-  useEffect(() => {}, [pathname]);
+    const userLogin = useSelector((state)=>state.userLogin)
+    const {hackUser} = userLogin
+  useEffect(() => {
+    
+  }, [pathname,hackUser]);
 
   return (
     <div className="App">
