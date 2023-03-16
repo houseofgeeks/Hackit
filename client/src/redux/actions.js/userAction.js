@@ -38,14 +38,12 @@ export const userRegisterRequest =
         },
       };
       const { data } = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URI}/api/user/validate`,
+        `${process.env.REACT_APP_BACKEND_URI}/api/user`,
         { name, email, password },
         config
       );
       console.log(data);
       dispatch({ type: "USER_REGISTER_SUCCESS", payload: data });
-      dispatch({ type: "USER_LOGIN_SUCCESS", payload: data });
-      localStorage.setItem("hackUser", JSON.stringify(data));
     } catch (error) {
       dispatch({
         type: "USER_REGISTER_FAILURE",
@@ -53,3 +51,21 @@ export const userRegisterRequest =
       });
     }
   };
+
+export const userVerifyRequest = (email) => async (dispatch) => {
+  try {
+    dispatch({ type: "USER_REGISTER_REQUEST" });
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URI}/verify/${email}`
+    );
+    console.log(data);
+    dispatch({ type: "USER_REGISTER_DONE", payload: data });
+    dispatch({ type: "USER_LOGIN_SUCCESS", payload: data });
+    localStorage.setItem("hackUser", JSON.stringify(data));
+  } catch (error) {
+    dispatch({
+      type: "USER_REGISTER_FAILURE",
+      payload: error?.response?.data.message,
+    });
+  }
+};
