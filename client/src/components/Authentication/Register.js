@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { userOtpRequest } from "../../redux/actions.js/userAction";
+import { userRegisterRequest } from "../../redux/actions.js/userAction";
 import Message from "../Message";
 
 const Register = () => {
@@ -13,16 +13,14 @@ const Register = () => {
   const [name, setName] = useState("");
 
   const dispatch = useDispatch();
-  const userOtp = useSelector((state) => state.userOtp);
-  const { loading, success, error } = userOtp;
+  const userRegister = useSelector((state) => state.userRegister);
+  const { loading, hackUser, error } = userRegister;
   const navigate = useNavigate();
   const handleSignup = () => {
-    dispatch(userOtpRequest(name, email, password));
-      navigate("/validate");
+    dispatch(userRegisterRequest(name, email, password));
   };
   return (
     <div className="w-full h-[100vh] login relative">
-
       <Stars />
       <div className="flex justify-center items-center w-full h-full">
         <div className="w-[700px] h-[400px] bg-gradient-to-tr flex items-center justify-around from-slate-300 to-gray-200 rounded-lg">
@@ -51,7 +49,7 @@ const Register = () => {
               onClick={handleSignup}
               className="bg-red-500 my-4 py-2 px-8 rounded-lg text-white font-semibold cursor-pointer text-lg hover:bg-red-600"
             >
-              Send Otp
+              Sign up
             </button>
             <p>
               Already have an account ?{" "}

@@ -6,11 +6,11 @@ import { Routes, Route, Router } from "react-router-dom";
 import Loading from "./pages/Loading";
 import Login from "./components/Authentication/Login";
 import Register from "./components/Authentication/Register";
-import Validate from "./components/Authentication/Validate";
 import ProblemStatement from "./pages/ProblemStatement";
 import Stars from "./components/Stars";
 import Profile from "./components/Profile";
 import Navbar from "./components/Navbar";
+import Loader from "./components/Loader";
 function App() {
   // const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -29,9 +29,9 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
-          <Route exact path="/validate" element={<Validate />} />
           <Route exact path="/problems" element={<ProblemStatement />} />
           <Route exact path="/profile" element={<Profile />} />
+          <Route exact path="/verify" element={< Loader/>} />
         </Routes>
       {/* )
       } */}
