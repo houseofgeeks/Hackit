@@ -60,11 +60,11 @@ const Hero = () => {
   const handleMouseLeaved = () => setCustomVariants("default");
   return (
     <div className="w-[100%] h-[100vh] bg-[url('./assets/bgSpace.avif')] relative">
-      <div className="bg-[rgba(0,0,0,0.5)] w-full h-full flex-col flex items-center justify-center">
+      <div className="bg-[rgba(0,0,0,0.5)]  w-full h-full flex-col flex items-center justify-center">
         <span
           onMouseEnter={handleMouseEntered}
           onMouseLeave={handleMouseLeaved}
-          className="text-slate-100 text"
+          className="text-slate-100 text z-10"
         >
           HOUSE OF HACKERS
         </span>
@@ -72,7 +72,7 @@ const Hero = () => {
         <motion.div
           variants={variants}
           animate={customVariants}
-          className="w-6 h-6 bg-white rounded-full fixed top-0 left-0 pointer-events-none"
+          className="w-6 h-6 bg-white rounded-full fixed top-0 left-0 z-[100] pointer-events-none"
         ></motion.div>
       </div>
       <motion.div
@@ -81,7 +81,7 @@ const Hero = () => {
         animate={["astro", "moved"]}
         className="absolute top-10 left-10"
       >
-        <img className="max-w-[220px] z-[-1]" src={astro} alt="" />
+        <img className="md:max-w-[220px] max-w-[150px] z-[-1]" src={astro} alt="" />
       </motion.div>
     </div>
   );

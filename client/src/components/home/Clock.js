@@ -33,12 +33,12 @@ const Clock = ({
       <div className="flex items-center justify-center">
         {timer.map((item, i) => {
           return (
-            <section key={i} className="flex flex-col items-center mx-2">
-              <div className="w-28 h-28 rounded-lg flex items-center justify-center shadow-blue-500 shadow-lg">
+            <section key={i} className="flex flex-col items-center mx-2 ">
+              <div className="md:w-28 md:h-28 sm:h-20 sm:w-20 w-16 h-16 rounded-lg flex items-center justify-center shadow-blue-500 shadow-lg">
                 <p
                   onMouseEnter={handleMouseEntered}
                   onMouseLeave={handleMouseLeaved}
-                  className="text-white font-bold text-7xl"
+                  className="text-white font-bold md:text-7xl sm:text-5xl text-4xl"
                 >
                   {item.time}
                 </p>
