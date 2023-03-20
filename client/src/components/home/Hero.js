@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import astro from "../../assets/astro.png";
+import ClockComp from "./ClockComp";
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -59,14 +60,15 @@ const Hero = () => {
   const handleMouseLeaved = () => setCustomVariants("default");
   return (
     <div className="w-[100%] h-[100vh] bg-[url('./assets/bgSpace.avif')] relative">
-      <div className="bg-[rgba(0,0,0,0.5)] w-full h-full flex items-center justify-center">
-      <span
+      <div className="bg-[rgba(0,0,0,0.5)] w-full h-full flex-col flex items-center justify-center">
+        <span
           onMouseEnter={handleMouseEntered}
           onMouseLeave={handleMouseLeaved}
           className="text-slate-100 text"
         >
           HOUSE OF HACKERS
         </span>
+        <ClockComp setCustomVariants={setCustomVariants} />
         <motion.div
           variants={variants}
           animate={customVariants}
