@@ -59,7 +59,7 @@ const Hero = () => {
   const handleMouseEntered = () => setCustomVariants("text");
   const handleMouseLeaved = () => setCustomVariants("default");
   return (
-    <div className="w-[100%] h-[100vh] bg-[url('./assets/bgSpace.avif')] relative">
+    <div className="w-[100%] h-[100vh] bg-[url('./assets/bgSpace.avif')] bg-cover bg-no-repeat relative">
       <div className="bg-[rgba(0,0,0,0.5)]  w-full h-full flex-col flex items-center justify-center">
         <span
           onMouseEnter={handleMouseEntered}
