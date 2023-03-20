@@ -2,29 +2,31 @@ import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import MenuComp from "./MenuComp";
+import hackers from "../assets/Hackers.svg";
 const Navbar = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { hackUser } = userLogin;
   return (
-    <div className="py-4 px-20 w-full fixed top-0 z-20 shadow-md timeline">
+    <div className="py-4 px-20 w-full fixed top-0 z-20 timeline">
       <div className="flex justify-between items-center">
         <Link to={"/"}>
-          <div className="text-white text-3xl font-bold title">
-            HOUSE OF HACKERS
-          </div>
+          <img className="max-w-[120px]" src={hackers} alt="" />
         </Link>
 
-        <div>
-          {hackUser ? (
-            <MenuComp name={hackUser?.name} />
-          ) : (
-            <Link to={"/login"}>
-              <button className="bg-red-500 py-2 px-8 rounded-lg text-white font-semibold cursor-pointer text-lg hover:bg-red-600">
-                Login
-              </button>
-            </Link>
-          )}
-        </div>
+        <ul className="flex items-center">
+          <li>
+            <a href="" className="text-white mx-6 text-xl hover:text-[#ee2a7b] ">About</a>
+          </li>
+          <li>
+            <a href="" className="text-white mx-6 text-xl hover:text-[#ee2a7b] ">Schedule</a>
+          </li>
+          <li>
+            <a href="" className="text-white mx-6 text-xl hover:text-[#ee2a7b] ">FAQ's</a>
+          </li>
+          <li>
+            <a href="" className="text-white mx-6 text-xl hover:text-[#ee2a7b] ">Contact us</a>
+          </li>
+        </ul>
       </div>
     </div>
   );

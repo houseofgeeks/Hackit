@@ -8,15 +8,16 @@ import { IoIosSchool } from "react-icons/io";
 import { AiFillStar } from "react-icons/ai";
 const Timeline = () => {
   return (
-    <div>
+    <div className="bg-[rgba(0,0,0,0.5)] relative  w-[100%] min-h-[100vh]">
+      <h1 className="text-center mb-8 text-slate-200 font-bold text-7xl">TIMELINE</h1>
       <VerticalTimeline>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          contentStyle={{ background: "rgb(190,24,93)", color: "#fff" }}
-          contentArrowStyle={{ borderRight: "7px solid  rgb(190,24,93)" }}
+          contentStyle={{ background: "rgb(255,255,255,0.1)", color: "#fff" }}
+          contentArrowStyle={{ borderRight: "7px solid  rgb(255,255,255,0.1)" }}
           date="25 Mar - 5Apr"
-          iconStyle={{ background: "rgb(190,24,93)", color: "#fff" }}
-          icon={<IoIosSchool />}
+          iconStyle={{ background: "rgb(36,36,36,1)", color: "#fff" }}
+          icon={<IoIosSchool className="text-slate-100" />}
         >
           <h1 className="text-slate-200 font-bold text-xl">
             REGISTRATION BEGINS
@@ -28,11 +29,11 @@ const Timeline = () => {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          contentStyle={{ background: "rgb(183,42,32)", color: "#fff" }}
-          contentArrowStyle={{ borderRight: "7px solid  rgb(183,42,32)" }}
-          date="6 Apr - 8 Apr"
-          iconStyle={{ background: "rgb(183,42,32)", color: "#fff" }}
-          icon={<IoIosSchool />}
+          contentStyle={{ background: "rgb(255,255,255,0.1)", color: "#fff" }}
+          contentArrowStyle={{ borderRight: "7px solid  rgb(255,255,255,0.1)" }}
+          date="25 Mar - 5Apr"
+          iconStyle={{ background: "rgb(36,36,36,1)", color: "#fff" }}
+          icon={<IoIosSchool className="text-slate-100" />}
         >
           <h1 className="text-slate-200 font-bold text-xl">PHASE 1 RESULT</h1>
           <p>
@@ -41,11 +42,11 @@ const Timeline = () => {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          contentStyle={{ background: "rgb(190,24,93)", color: "#fff" }}
-          contentArrowStyle={{ borderRight: "7px solid  rgb(190,24,93)" }}
-          date="15 Apr - 17 Apr"
-          iconStyle={{ background: "rgb(190,24,93)", color: "#fff" }}
-          icon={<IoIosSchool />}
+          contentStyle={{ background: "rgb(255,255,255,0.1)", color: "#fff" }}
+          contentArrowStyle={{ borderRight: "7px solid  rgb(255,255,255,0.1)" }}
+          date="25 Mar - 5Apr"
+          iconStyle={{ background: "rgb(36,36,36,1)", color: "#fff" }}
+          icon={<IoIosSchool className="text-slate-100" />}
         >
           <h1 className="text-slate-200 font-bold text-xl">
             HOUSE OF HACKERS MAIN EVENT
@@ -57,13 +58,15 @@ const Timeline = () => {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          contentStyle={{ background: "rgb(183,42,32)", color: "#fff" }}
-          contentArrowStyle={{ borderRight: "7px solid  rgb(183,42,32)" }}
-          date="17 Apr"
-          iconStyle={{ background: "rgb(183,42,32)", color: "#fff" }}
-          icon={<IoIosSchool />}
+          contentStyle={{ background: "rgb(255,255,255,0.1)", color: "#fff" }}
+          contentArrowStyle={{ borderRight: "7px solid  rgb(255,255,255,0.1)" }}
+          date="25 Mar - 5Apr"
+          iconStyle={{ background: "rgb(36,36,36,1)", color: "#fff" }}
+          icon={<IoIosSchool className="text-slate-100" />}
         >
-          <h1 className="text-slate-200 font-bold text-xl">RESULT DECLARATION</h1>
+          <h1 className="text-slate-200 font-bold text-xl">
+            RESULT DECLARATION
+          </h1>
           <p>
             The ultimate genius will be revealed by our Judging Panel on 17th
             April 2023 through our social media handles

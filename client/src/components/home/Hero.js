@@ -2,13 +2,12 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import astro from "../../assets/astro.png";
 import ClockComp from "./ClockComp";
-const Hero = () => {
+const Hero = ({customVariants,setCustomVariants}) => {
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
   });
 
-  const [customVariants, setCustomVariants] = useState("default");
   useEffect(() => {
     const onMouseMove = (e) => {
       setMousePosition({
@@ -59,8 +58,23 @@ const Hero = () => {
   const handleMouseEntered = () => setCustomVariants("text");
   const handleMouseLeaved = () => setCustomVariants("default");
   return (
-    <div className="w-[100%] h-[100vh] bg-[url('./assets/bgSpace.avif')] bg-cover bg-no-repeat relative">
-      <div className="bg-[rgba(0,0,0,0.5)]  w-full h-full flex-col flex items-center justify-center">
+    <>
+      <div className="w-[100%] h-[100vh] fixed bg-[url('./assets/bgSpace.avif')] bg-cover bg-no-repeat">
+        <motion.div
+          initial={{ x: -200 }}
+          variants={astroVariants}
+          animate={["astro", "moved"]}
+          className="absolute top-10 left-10"
+        >
+          <img
+            className="md:max-w-[220px] fixed left-0 top-10 max-w-[150px] z-[-1]"
+            src={astro}
+            alt=""
+          />
+        </motion.div>
+      </div>
+
+      <div className="bg-[rgba(0,0,0,0.5)] relative  w-[100%] h-[100vh] flex-col flex items-center justify-center">
         <span
           onMouseEnter={handleMouseEntered}
           onMouseLeave={handleMouseLeaved}
@@ -75,15 +89,7 @@ const Hero = () => {
           className="w-6 h-6 bg-white rounded-full fixed top-0 left-0 z-[100] pointer-events-none"
         ></motion.div>
       </div>
-      <motion.div
-        initial={{ x: -200 }}
-        variants={astroVariants}
-        animate={["astro", "moved"]}
-        className="absolute top-10 left-10"
-      >
-        <img className="md:max-w-[220px] max-w-[150px] z-[-1]" src={astro} alt="" />
-      </motion.div>
-    </div>
+    </>
   );
 };
 export default Hero;

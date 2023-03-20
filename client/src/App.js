@@ -21,11 +21,11 @@ function App() {
 
   return (
     <div className="App">
-      {/* {!(
+      {!(
         pathname.includes("login") ||
         pathname.includes("register") ||
         pathname.includes("verify")
-      ) && <Navbar />} */}
+      ) && <Navbar />}
 
       <Routes>
         <Route exact path="/" element={<Home />} />
