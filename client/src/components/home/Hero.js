@@ -1,32 +1,87 @@
-import { BsArrowRight } from "react-icons/bs";
-import { Link } from "react-router-dom";
-import Stars from "../Stars";
-
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import astro from "../../assets/astro.png";
 const Hero = () => {
+  const [mousePosition, setMousePosition] = useState({
+    x: 0,
+    y: 0,
+  });
+
+  const [customVariants, setCustomVariants] = useState("default");
+  useEffect(() => {
+    const onMouseMove = (e) => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    };
+    window.addEventListener("mousemove", onMouseMove);
+
+    return () => window.removeEventListener("mousemove", onMouseMove);
+  }, []);
+
+  const variants = {
+    default: {
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+      transition: {
+        type: "tween",
+      },
+    },
+    text: {
+      width: 100,
+      height: 100,
+      x: mousePosition.x - 75,
+      y: mousePosition.y - 75,
+      backgroundColor: "green",
+      mixBlendMode: "difference",
+    },
+  };
+
+  const astroVariants = {
+    astro: {
+      y: [40, 0, 40, 0, 40, 0, 40, 0, 40],
+      transition: {
+        duration: 10,
+        ease: "easeInOut",
+        repeat: Infinity,
+      },
+    },
+    moved: {
+      x: -50,
+      transition: {
+        duration: 5,
+        ease: "easeInOut",
+      },
+    },
+  };
+  const handleMouseEntered = () => setCustomVariants("text");
+  const handleMouseLeaved = () => setCustomVariants("default");
   return (
-    <div className="w-full h-[100vh] home">
-        {/* <Design /> */}
-        <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  w-full text-center">
-          <div className="title">
-            <h1 className="text-white text-7xl font-bold">
-              WELCOME TO IIIT RANCHI's
-            </h1>
-            {/* <h1 className="text-white text-7xl font-bold">
-            DEV CHALLENGER
-          </h1> */}
-            <p className="text-gray-300 text-2xl text-center mt-2">
-              first ever hackathon
-            </p>
-          </div>
-          <Link to={"/problems"}>
-            <button className="rounded-3xl bg-pink-700 hover:bg-red-600 py-3 px-5 mt-4 inline-flex items-center">
-              <p className="text-white text-lg ">View Problem Statement</p>
-              <BsArrowRight className="text-white ml-2 font-bold text-lg" />
-            </button>
-          </Link>
-        </div>
-        <Stars />
+    <div className="w-[100%] h-[100vh] bg-[url('./assets/bgSpace.avif')] relative">
+      <div className="bg-[rgba(0,0,0,0.5)] w-full h-full flex items-center justify-center">
+      <span
+          onMouseEnter={handleMouseEntered}
+          onMouseLeave={handleMouseLeaved}
+          className="text-slate-100 text"
+        >
+          HOUSE OF HACKERS
+        </span>
+        <motion.div
+          variants={variants}
+          animate={customVariants}
+          className="w-6 h-6 bg-white rounded-full fixed top-0 left-0 pointer-events-none"
+        ></motion.div>
       </div>
-  )
-}
-export default Hero
+      <motion.div
+        initial={{ x: -200 }}
+        variants={astroVariants}
+        animate={["astro", "moved"]}
+        className="absolute top-10 left-10"
+      >
+        <img className="max-w-[220px] z-[-1]" src={astro} alt="" />
+      </motion.div>
+    </div>
+  );
+};
+export default Hero;

@@ -15,19 +15,17 @@ import Verify from "./components/Authentication/Verify";
 import { useSelector } from "react-redux";
 function App() {
   const { pathname } = useLocation();
-    const userLogin = useSelector((state)=>state.userLogin)
-    const {hackUser} = userLogin
-  useEffect(() => {
-    
-  }, [pathname,hackUser]);
+  const userLogin = useSelector((state) => state.userLogin);
+  const { hackUser } = userLogin;
+  useEffect(() => {}, [pathname, hackUser]);
 
   return (
     <div className="App">
-      {!(
+      {/* {!(
         pathname.includes("login") ||
         pathname.includes("register") ||
         pathname.includes("verify")
-      ) && <Navbar />}
+      ) && <Navbar />} */}
 
       <Routes>
         <Route exact path="/" element={<Home />} />
@@ -37,8 +35,6 @@ function App() {
         <Route exact path="/profile" element={<Profile />} />
         <Route exact path="/verify/:email" element={<Verify />} />
       </Routes>
-      {/* )
-      } */}
     </div>
   );
 }
