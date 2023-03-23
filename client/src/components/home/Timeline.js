@@ -33,7 +33,7 @@ const Timeline = () => {
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgb(255,255,255,0.1)", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(255,255,255,0.1)" }}
-          date="25 Mar - 5Apr"
+          date="6 Apr - 8 Apr"
           iconStyle={{ background: "rgb(36,36,36,1)", color: "#fff" }}
           icon={<IoIosSchool className="text-slate-100" />}
         >
@@ -46,7 +46,7 @@ const Timeline = () => {
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgb(255,255,255,0.1)", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(255,255,255,0.1)" }}
-          date="25 Mar - 5Apr"
+          date="15 Apr - 17 Apr"
           iconStyle={{ background: "rgb(36,36,36,1)", color: "#fff" }}
           icon={<IoIosSchool className="text-slate-100" />}
         >
@@ -62,7 +62,7 @@ const Timeline = () => {
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgb(255,255,255,0.1)", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(255,255,255,0.1)" }}
-          date="25 Mar - 5Apr"
+          date="18 Apr - 19 Apr"
           iconStyle={{ background: "rgb(36,36,36,1)", color: "#fff" }}
           icon={<IoIosSchool className="text-slate-100" />}
         >

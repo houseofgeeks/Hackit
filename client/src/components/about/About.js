@@ -1,7 +1,7 @@
 import about from "../../assets/Hackers.svg";
 const About = () => {
   return (
-    <div className="bg-[rgba(26,21,5,0.6)] md:px-24 sm:px-8 px-4 py-8 relative  w-[100%] min-h-[80vh]">
+    <div className="bg-[rgba(26,21,5,0.6)] md:px-24 sm:px-8 px-4 py-8 relative  w-[100%] min-h-[60vh]">
       <h1 className="text-center mb-8 font-[Varela] text-[#ee2a7b] font-bold text-5xl ">
         About House Of Hackers
       </h1>

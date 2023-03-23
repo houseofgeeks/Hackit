@@ -94,6 +94,12 @@
   box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
   transform: translate(0.1em, 0.1em);
 }
+
+.insta{
+  background: -webkit-linear-gradient(#944EB9, #C64A92);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 @media (max-width: 1024px) {
   .text {
     font-size: 4em;
