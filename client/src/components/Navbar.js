@@ -7,7 +7,7 @@ const Navbar = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { hackUser } = userLogin;
   return (
-    <div className="py-4 px-20 w-full fixed top-0 z-20 timeline">
+    <div className="py-4 md:px-20 sm:px-8 px-4 w-full fixed top-0 z-20 timeline">
       <div className="flex justify-between items-center">
         <Link to={"/"}>
           <img className="max-w-[120px]" src={hackers} alt="" />

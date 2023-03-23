@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none;
+  /* cursor: none; */
 }
 
 ::-webkit-scrollbar {
@@ -26,8 +26,76 @@
     1px 30px 60px rgba(16, 16, 16, 0.4);
 }
 
-@media(max-width:1024px) {
-  .text{
+/* .register_btn css */
+.register_btn {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.3em 0.8em 0.9em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(to right, #ce3374, #ee2a7b);
+  border: none;
+  letter-spacing: 0.05em;
+  border-radius: 16px;
+}
+
+.register_btn svg {
+  margin-right: 3px;
+  transform: rotate(30deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.register_btn span {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.register_btn:hover svg {
+  transform: translateX(5px) rotate(90deg);
+}
+
+.register_btn:hover span {
+  transform: translateX(7px);
+}
+
+
+.fold-btn {
+  position: relative;
+  background-color: #ee2a7b;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.5em;
+  color: #DEDEDE;
+  box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+}
+
+.fold-btn::before {
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 50%, rgba(150,4,31,1) 50%, rgba(191,4,38,1) 60%);
+  border-radius: 0 0 0.5em 0;
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.fold-btn:hover::before {
+  width: 1.6em;
+  height: 1.6em;
+}
+
+.fold-btn:active {
+  box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
+  transform: translate(0.1em, 0.1em);
+}
+@media (max-width: 1024px) {
+  .text {
     font-size: 4em;
   }
 }
