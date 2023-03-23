@@ -1,4 +1,4 @@
-import trophy from "../../assets/trophy.json";
+import trophy from "../../assets/trophy.png";
 import PrizeCard from "./PrizeCard";
 const Prize = () => {
   const prizeData = [
@@ -26,7 +26,7 @@ const Prize = () => {
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  justify-center gap-14">
         {prizeData.map((data) => {
           return (
-            <PrizeCard type={data.type} amount={data.amount} img={trophy.img} />
+            <PrizeCard type={data.type} amount={data.amount} img={data.img} />
           );
         })}
       </div>

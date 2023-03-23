@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../App.css";
 import About from "../components/about/About";
+import AskedQuestions from "../components/faq/AskedQuestions";
 import Footer from "../components/footer.js/Footer";
 import ClockComp from "../components/home/ClockComp";
 import Hero from "../components/home/Hero";
@@ -23,6 +24,7 @@ const Home = () => {
       />
       <Sponsor />
       <Prize />
+      <AskedQuestions />
       <Footer />
     </>
   );

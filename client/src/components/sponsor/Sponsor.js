@@ -14,19 +14,24 @@ const Sponsor = () => {
             offline, students will be exposed to your quality products, which
             will lead to your growth
           </p>
-          <a href="https://drive.google.com/file/d/1bIgd-44hUsIx-lAFCGUwV2LLqvPOH24e/view?usp=share_link" target='_blank'>
-            <button className="fold-btn mt-4 font-[Varela]">
-              <b>View Brouchure</b>
-            </button>
-          </a>
-          <a
-            href="https://drive.google.com/file/d/1GfMO4tU1mux7ZIWFsnOUDX1a0EIkJbNZ/view?usp=share_link"
-            target="_blank"
-          >
-            <button className="fold-btn mt-4 ml-8 font-[Varela]">
-              <b>Code of Conduct</b>
-            </button>
-          </a>
+          <div className="flex justify-between items-center">
+            <a
+              href="https://drive.google.com/file/d/1bIgd-44hUsIx-lAFCGUwV2LLqvPOH24e/view?usp=share_link"
+              target="_blank"
+            >
+              <button className="fold-btn mt-4 font-[Varela]">
+                <b>View Brouchure</b>
+              </button>
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1GfMO4tU1mux7ZIWFsnOUDX1a0EIkJbNZ/view?usp=share_link"
+              target="_blank"
+            >
+              <button className="fold-btn mt-4 ml-8 font-[Varela]">
+                <b>Code of Conduct</b>
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </div>

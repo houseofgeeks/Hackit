@@ -39,7 +39,7 @@ const Timeline = () => {
         >
           <h1 className="text-slate-200 font-bold text-xl">PHASE 1 RESULT</h1>
           <p>
-            Top 100 teams will be selected based on Idea submission for Round 2
+            Top 40 teams will be selected based on Idea submission for Round 2
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
@@ -71,7 +71,7 @@ const Timeline = () => {
           </h1>
           <p>
             The ultimate genius will be revealed by our Judging Panel on 17th
-            April 2023 through our social media handles
+            April 2023
           </p>
         </VerticalTimelineElement>
       </VerticalTimeline>
