@@ -34,7 +34,7 @@ const AskedQuestions = () => {
     {
       question: "Will there be participation certificate/ goodies?",
       answer:
-        "OfCourse, participation certificate would be provided to everyone who takes part in the second round of the hackathon. Talking about the goodies, we have a lot of things planned for you and so a lot of goodies.",
+        "Of Course, participation certificate would be provided to everyone who takes part in the second round of the hackathon. Talking about the goodies, we have a lot of things planned for you and so a lot of goodies.",
       id: 4,
     },
     {
@@ -45,7 +45,10 @@ const AskedQuestions = () => {
     },
   ];
   return (
-    <div className="bg-[rgba(26,21,5,0.6)] relative py-10 md:px-20 sm:px-8 px-4  w-[100%] min-h-[70vh]">
+    <div
+      id="faq"
+      className="bg-[rgba(26,21,5,0.6)] relative py-10 md:px-20 sm:px-8 px-4  w-[100%] min-h-[70vh]"
+    >
       <h1 className="text-center mb-8 font-[Varela] text-[#ee2a7b] font-bold text-5xl">
         Frequently Asked Questions
       </h1>

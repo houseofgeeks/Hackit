@@ -8,7 +8,7 @@ import { IoIosSchool } from "react-icons/io";
 import { AiFillStar } from "react-icons/ai";
 const Timeline = () => {
   return (
-    <div className="bg-[rgba(26,21,5,0.6)] relative  md:px-12 sm:px-8 px-4 w-[100%] min-h-[100vh]">
+    <div id="schedule" className="bg-[rgba(26,21,5,0.6)] relative  md:px-12 sm:px-8 px-4 w-[100%] min-h-[100vh]">
       <h1 className="text-center mb-8 font-[Varela] text-[#ee2a7b] font-bold text-5xl">
         TIMELINE
       </h1>

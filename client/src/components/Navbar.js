@@ -1,25 +1,34 @@
-import { Link } from "react-router-dom";
 import { BiMenuAltRight } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import MenuComp from "./MenuComp";
 import hackers from "../assets/Hackers.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { AiOutlineClose } from "react-icons/ai";
+import { HashLink as Link } from "react-router-hash-link";
+import { useLocation, useParams } from "react-router-dom";
+
 const Navbar = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { hackUser } = userLogin;
   const [navbar, setNavbar] = useState("transparent");
   const [menuOpen, setMenuOpen] = useState(false);
+  const { hash } = useLocation();
   const handleScroll = () => {
     if (window.scrollY >= 64) {
       setNavbar("black");
     } else {
       setNavbar("transparent");
+      hash = "/";
     }
   };
 
+  useEffect(() => {
+    console.log(hash);
+  }, [hash]);
+
   window.addEventListener("scroll", handleScroll);
+
   return (
     <div
       className={`bg-${navbar} bg-opacity-50 backdrop-blur-sm transition-all py-4 md:px-20 sm:px-8 px-4 w-full fixed top-0 z-20 timeline`}
@@ -45,44 +54,56 @@ const Navbar = () => {
             onClick={() => setMenuOpen(false)}
           />
           <li className={`${menuOpen && "my-3"}`}>
-            <a
-              href=""
-              className={`text-white ${
+            <Link
+              smooth
+              to="#about"
+              className={`${
+                hash === "#about" ? "text-[#ee2a7b]" : "text-white"
+              } ${
                 menuOpen ? "text-3xl" : "text-xl "
               } mx-6 hover:text-[#ee2a7b] transition-all`}
             >
               About
-            </a>
+            </Link>
           </li>
           <li className={`${menuOpen && "my-3"}`}>
-            <a
-              href=""
-              className={`text-white ${
+            <Link
+              smooth
+              to="#schedule"
+              className={`${
+                hash === "#schedule" ? "text-[#ee2a7b]" : "text-white"
+              }  ${
                 menuOpen ? "text-3xl" : "text-xl "
               } mx-6 hover:text-[#ee2a7b] transition-all`}
             >
               Schedule
-            </a>
+            </Link>
           </li>
           <li className={`${menuOpen && "my-3"}`}>
-            <a
-              href=""
-              className={`text-white ${
+            <Link
+              smooth
+              to="#faq"
+              className={`${
+                hash === "#faq" ? "text-[#ee2a7b]" : "text-white"
+              }  ${
                 menuOpen ? "text-3xl" : "text-xl "
               } mx-6 hover:text-[#ee2a7b] transition-all`}
             >
               FAQ's
-            </a>
+            </Link>
           </li>
           <li className={`${menuOpen && "my-3"}`}>
-            <a
-              href=""
-              className={`text-white ${
+            <Link
+              smooth
+              to="#contact"
+              className={`${
+                hash === "#contact" ? "text-[#ee2a7b]" : "text-white"
+              }  ${
                 menuOpen ? "text-3xl" : "text-xl "
               } mx-6 hover:text-[#ee2a7b] transition-all`}
             >
               Contact us
-            </a>
+            </Link>
           </li>
         </motion.ul>
       </div>
