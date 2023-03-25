@@ -7,21 +7,21 @@ const About = () => {
       </h1>
       <div className="flex  items-center justify-center flex-col text-slate-100">
         <div className="md:w-[700px]  w-[100%]">
-          <span className="my-2">
+          <span className="my-2 text-lg">
             House of Hackers is a competition where hackers from around the
             country participate to solve a problem statement provided, to create
             something unique which could be beneficial for society. It's one
             part party, one part work overnight battle against the clock and the
             competition
           </span>
-          <span className="block my-2">
+          <span className="block my-2 text-lg">
             We don't believe in keeping it bound to just software development
             and hence the hackathons contain problem statements from every
             domain, be it software dev., ai ml, blockchain, or be it
             hardware-based projects where the participants can show their
             command over silicon
           </span>
-          <span className="block my-2">
+          <span className="block my-2 text-lg">
             House of Geeks, the technical society of IIITR, has always supported
             Inclusion and diversity and moving forward on this track we would be
             organizing various events during the hackathon to keep the

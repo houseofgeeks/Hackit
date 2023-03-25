@@ -6,7 +6,7 @@ const Sponsor = () => {
       </h1>
       <div className="flex flex-col justify-center items-center">
         <div className="md:w-[500px] w-[100%] p-10 rounded-lg bg-[rgb(255,255,255,0.1)]">
-          <p className="text-slate-200">
+          <p className="text-slate-200 text-lg">
             Our sponsors from the past iterations have enjoyed a distinctive,
             and marketable appearance along with a significant media presence.
             You will be marketed in a variety of ways, such as on posters,

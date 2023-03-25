@@ -17,11 +17,11 @@ const Timeline = () => {
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgb(255,255,255,0.1)", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(255,255,255,0.1)" }}
-          date="25 Mar - 5Apr"
+          date="25 Mar - 5 Apr"
           iconStyle={{ background: "rgb(36,36,36,1)", color: "#fff" }}
           icon={<IoIosSchool className="text-slate-100" />}
         >
-          <h1 className="text-slate-200 font-bold text-xl">
+          <h1 className=" font-bold text-xl text-yellow-500">
             REGISTRATION BEGINS
           </h1>
           <p>
@@ -37,7 +37,7 @@ const Timeline = () => {
           iconStyle={{ background: "rgb(36,36,36,1)", color: "#fff" }}
           icon={<IoIosSchool className="text-slate-100" />}
         >
-          <h1 className="text-slate-200 font-bold text-xl">PHASE 1 RESULT</h1>
+          <h1 className="text-yellow-500 font-bold text-xl">PHASE 1 RESULT</h1>
           <p>
             Top 40 teams will be selected based on Idea submission for Round 2
           </p>
@@ -50,7 +50,7 @@ const Timeline = () => {
           iconStyle={{ background: "rgb(36,36,36,1)", color: "#fff" }}
           icon={<IoIosSchool className="text-slate-100" />}
         >
-          <h1 className="text-slate-200 font-bold text-xl">
+          <h1 className="text-yellow-500 font-bold text-xl">
             HOUSE OF HACKERS MAIN EVENT
           </h1>
           <p>
@@ -66,10 +66,10 @@ const Timeline = () => {
           iconStyle={{ background: "rgb(36,36,36,1)", color: "#fff" }}
           icon={<IoIosSchool className="text-slate-100" />}
         >
-          <h1 className="text-slate-200 font-bold text-xl">
+          <h1 className="text-yellow-500 font-bold text-xl">
             RESULT DECLARATION
           </h1>
-          <p>
+          <p >
             The ultimate genius will be revealed by our Judging Panel on 17th
             April 2023
           </p>
