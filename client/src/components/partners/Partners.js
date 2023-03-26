@@ -21,7 +21,10 @@ const Partners = () => {
     },
   ];
   return (
-    <div id="sponsor" className="bg-[rgba(26,21,5,0.6)] relative py-10 md:px-24 sm:px-8 px-4  w-[100%] min-h-[60vh]">
+    <div
+      id="sponsor"
+      className="bg-[rgba(26,21,5,0.6)] relative py-10 md:px-24 sm:px-8 px-4  w-[100%] min-h-[60vh]"
+    >
       <h1 className="text-center mb-8 font-[Varela] text-[#ee2a7b] font-bold text-5xl">
         Our Sponsors
       </h1>
@@ -40,17 +43,6 @@ const Partners = () => {
             </div>
           );
         })}
-      </div>
-
-      <h1 className="text-center mb-8 mt-8 font-[Varela] text-[#ee2a7b] font-bold text-5xl">
-        Coorganizers
-      </h1>
-      <div className="my-6 flex flex-col items-center">
-        <img
-          className="md:max-w-[300px] max-w-[250px] mt-4"
-          src={devdungeon}
-          alt=""
-        />
       </div>
     </div>
   );
