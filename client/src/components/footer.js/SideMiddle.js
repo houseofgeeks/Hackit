@@ -6,7 +6,7 @@ const SideMiddle = () => {
       </h2>
 
       <div className="font-[Urbanist]">
-        <p className="my-1">IIIT ranchi</p>
+        <p className="my-1">IIIT Ranchi</p>
         <p className="my-1">Dhurwa ,Ranchi ,Jharkhand</p>
         <p className="my-1">834004</p>
       </div>

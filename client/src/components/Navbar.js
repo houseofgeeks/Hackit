@@ -47,7 +47,7 @@ const Navbar = () => {
           className={`md:flex md:flex-row md:relative md:translate-x-0 ${
             menuOpen &&
             "bg-[rgba(0,0,0,0.8)] w-[100vw] h-[100vh] right-0 left-0 flex items-center justify-center translate-x-0"
-          } transition-all flex-col absolute top-[0] right-[-200px] items-center font-[Urbanist]`}
+          } transition-all flex-col absolute top-[0] md:right-0 right-[-200px] items-center font-[Urbanist]`}
         >
           <AiOutlineClose
             className="md:hidden block font-bold text-5xl cursor-pointer absolute top-10 right-8 text-white"
@@ -101,12 +101,27 @@ const Navbar = () => {
               smooth
               to="#sponsor"
               className={`${
-                hash === "#contact" ? "text-[#ee2a7b]" : "text-white"
+                hash === "#sponsor" ? "text-[#ee2a7b]" : "text-white"
               }  ${
                 menuOpen ? "text-3xl" : "text-xl "
               } mx-6 hover:text-[#ee2a7b] transition-all`}
             >
               Sponsors
+            </Link>
+          </li>
+          <li className={`${menuOpen && "my-3"}`}>
+            <Link
+              onClick={() => setMenuOpen(false)}
+              smooth
+              target={'_blank'}
+              to="https://drive.google.com/file/d/10QeDlV-XRIkiAAstKLLi1NQdTLksT-Gy/view"
+              className={`${
+                hash === "#contact" ? "text-[#ee2a7b]" : "text-white"
+              }  ${
+                menuOpen ? "text-3xl" : "text-xl "
+              } mx-6 hover:text-[#ee2a7b] transition-all`}
+            >
+              Rules
             </Link>
           </li>
         </ul>

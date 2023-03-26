@@ -20,11 +20,11 @@ const Sponsor = () => {
               target="_blank"
             >
               <button className="fold-btn mt-4 font-[Varela]">
-                <b>View Brouchure</b>
+                <b>View Brochure</b>
               </button>
             </a>
             <a
-              href="https://drive.google.com/file/d/1GfMO4tU1mux7ZIWFsnOUDX1a0EIkJbNZ/view?usp=share_link"
+              href="https://drive.google.com/file/d/1-uY5lQ_0he__Arlrs3vHrBlIQTl7MiqD/view"
               target="_blank"
             >
               <button className="fold-btn mt-4 ml-8 font-[Varela]">
