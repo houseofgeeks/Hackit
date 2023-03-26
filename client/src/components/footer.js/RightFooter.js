@@ -2,6 +2,7 @@ import { BsLinkedin } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { BsDiscord } from "react-icons/bs";
+import { Link } from "react-router-dom";
 const RightFooter = () => {
   return (
     <div>
@@ -9,10 +10,23 @@ const RightFooter = () => {
         STAY CONNECTED
       </h2>
       <div className="flex mt-3">
-        <BsLinkedin className="mx-2 text-3xl text-[#326BC9] cursor-pointer" />
-        <BsInstagram className="mx-2 text-3xl insta text-[#C64A92] cursor-pointer" />
-        <BsTwitter className="mx-2 text-3xl text-[#1E9BEB] cursor-pointer" />
-        <BsDiscord className="mx-2 text-3xl text-[#5562EA] cursor-pointer" />
+        <Link
+          target={"_blank"}
+          to={"https://instagram.com/house.of.hackers?igshid=ZDdkNTZiNTM="}
+        >
+          <BsInstagram className="mx-2 text-3xl insta text-[#C64A92] cursor-pointer" />
+        </Link>
+        <Link
+          target={"_blank"}
+          to={
+            "https://twitter.com/_houseofhackers?t=HmP1Lo-xbLBiT8obO_9raQ&s=09"
+          }
+        >
+          <BsTwitter className="mx-2 text-3xl text-[#1E9BEB] cursor-pointer" />
+        </Link>
+        <Link to={"https://discord.gg/nka7uTufy3"} target="_blank">
+          <BsDiscord className="mx-2 text-3xl text-[#5562EA] cursor-pointer" />
+        </Link>
       </div>
     </div>
   );

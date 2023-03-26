@@ -43,11 +43,11 @@ const Navbar = () => {
           onClick={() => setMenuOpen(true)}
         />
 
-        <motion.ul
-          className={`md:flex md:flex-row md:relative md:translate-x-0 translate-x-[400px]  ${
+        <ul
+          className={`md:flex md:flex-row md:relative md:translate-x-0 ${
             menuOpen &&
-            "bg-[rgba(0,0,0,0.8)] w-[100vw] h-[100vh] flex items-center justify-center translate-x-0"
-          } transition-all flex-col absolute top-[0] right-0 items-center font-[Urbanist]`}
+            "bg-[rgba(0,0,0,0.8)] w-[100vw] h-[100vh] right-0 left-0 flex items-center justify-center translate-x-0"
+          } transition-all flex-col absolute top-[0] right-[-200px] items-center font-[Urbanist]`}
         >
           <AiOutlineClose
             className="md:hidden block font-bold text-5xl cursor-pointer absolute top-10 right-8 text-white"
@@ -55,6 +55,7 @@ const Navbar = () => {
           />
           <li className={`${menuOpen && "my-3"}`}>
             <Link
+              onClick={() => setMenuOpen(false)}
               smooth
               to="#about"
               className={`${
@@ -68,6 +69,7 @@ const Navbar = () => {
           </li>
           <li className={`${menuOpen && "my-3"}`}>
             <Link
+              onClick={() => setMenuOpen(false)}
               smooth
               to="#schedule"
               className={`${
@@ -82,6 +84,7 @@ const Navbar = () => {
           <li className={`${menuOpen && "my-3"}`}>
             <Link
               smooth
+              onClick={() => setMenuOpen(false)}
               to="#faq"
               className={`${
                 hash === "#faq" ? "text-[#ee2a7b]" : "text-white"
@@ -94,18 +97,19 @@ const Navbar = () => {
           </li>
           <li className={`${menuOpen && "my-3"}`}>
             <Link
+              onClick={() => setMenuOpen(false)}
               smooth
-              to="#contact"
+              to="#sponsor"
               className={`${
                 hash === "#contact" ? "text-[#ee2a7b]" : "text-white"
               }  ${
                 menuOpen ? "text-3xl" : "text-xl "
               } mx-6 hover:text-[#ee2a7b] transition-all`}
             >
-              Contact us
+              Sponsors
             </Link>
           </li>
-        </motion.ul>
+        </ul>
       </div>
     </div>
   );
