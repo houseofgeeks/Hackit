@@ -22,8 +22,8 @@ const About = () => {
             command over silicon
           </span>
           <span className="block my-2 text-lg">
-            House of Geeks, the technical society of IIITR, has always supported
-            Inclusion and diversity and moving forward on this track we would be
+            House of Geeks, the Technical Society of IIITR, has always supported
+            inclusion and diversity and moving forward on this track we would be
             organizing various events during the hackathon to keep the
             participants engaged in a productive way. Our aim is to create such
             an environment in which the hackers feel not merely taking part but

@@ -7,16 +7,15 @@ const Sponsor = () => {
       <div className="flex flex-col justify-center items-center">
         <div className="md:w-[500px] w-[100%] p-10 rounded-lg bg-[rgb(255,255,255,0.1)]">
           <p className="text-slate-200 text-lg">
-            Our sponsors will enjoy a distinctive,
-            and marketable appearance along with a significant media presence.
-            You will be marketed in a variety of ways, such as on posters,
-            hoardings, websites, etc. As our hackathon will be conducted
-            offline, students will be exposed to your quality products, which
-            will lead to your growth
+            Our sponsors will enjoy a distinctive, and marketable appearance
+            along with a significant media presence. You will be marketed in a
+            variety of ways, such as on posters, hoardings, websites, etc. As
+            our hackathon will be conducted offline, students will be exposed to
+            your quality products, which will lead to your growth
           </p>
           <div className="flex justify-between items-center">
             <a
-              href="https://drive.google.com/file/d/1bIgd-44hUsIx-lAFCGUwV2LLqvPOH24e/view?usp=share_link"
+              href="https://drive.google.com/file/d/10Ak9OOfcB7OTiMILPFNNHKiLjIZgYZKT/view"
               target="_blank"
             >
               <button className="fold-btn mt-4 font-[Varela]">

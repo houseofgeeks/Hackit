@@ -17,7 +17,7 @@ const Timeline = () => {
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgb(255,255,255,0.1)", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(255,255,255,0.1)" }}
-          date="26 Mar - 5 Apr"
+          date="26 Mar - 6 Apr"
           iconStyle={{ background: "rgb(36,36,36,1)", color: "#fff" }}
           icon={<IoIosSchool className="text-slate-100" />}
         >
@@ -39,7 +39,7 @@ const Timeline = () => {
         >
           <h1 className="text-yellow-500 font-bold text-xl">PHASE 1 RESULT</h1>
           <p>
-            Top 40 teams will be selected based on Idea submission for Round 2
+            Top 50 teams will be selected based on Idea submission for Round 2
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
@@ -62,7 +62,7 @@ const Timeline = () => {
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgb(255,255,255,0.1)", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(255,255,255,0.1)" }}
-          date="18 Apr - 19 Apr"
+          date="17 Apr"
           iconStyle={{ background: "rgb(36,36,36,1)", color: "#fff" }}
           icon={<IoIosSchool className="text-slate-100" />}
         >

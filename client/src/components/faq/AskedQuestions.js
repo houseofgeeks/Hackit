@@ -40,7 +40,7 @@ const AskedQuestions = () => {
     {
       question: "What is the registration procedure?",
       answer:
-        "Anyone who meets the conditions set for participating in this event can register on the official website of House of Hackers (https://houseofhackers.tech) till the last date i.e. 5 Apr.",
+        "Anyone who meets the conditions set for participating in this event can register on the official website of House of Hackers (https://houseofhackers.tech) till the last date i.e. 6 Apr.",
       id: 5,
     },
   ];

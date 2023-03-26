@@ -17,24 +17,32 @@ function App() {
   const { pathname } = useLocation();
   const userLogin = useSelector((state) => state.userLogin);
   const { hackUser } = userLogin;
-  useEffect(() => {}, [pathname, hackUser]);
+
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
 
   return (
     <div className="App">
-      {!(
-        pathname.includes("login") ||
-        pathname.includes("register") ||
-        pathname.includes("verify")
-      ) && <Navbar />}
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <Navbar />
 
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/register" element={<Register />} />
-        <Route exact path="/problems" element={<ProblemStatement />} />
-        <Route exact path="/profile" element={<Profile />} />
-        <Route exact path="/verify/:email" element={<Verify />} />
-      </Routes>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/register" element={<Register />} />
+            <Route exact path="/problems" element={<ProblemStatement />} />
+            <Route exact path="/profile" element={<Profile />} />
+            <Route exact path="/verify/:email" element={<Verify />} />
+          </Routes>
+        </>
+      )}
     </div>
   );
 }
