@@ -1,16 +1,13 @@
 import { BiMenuAltRight } from "react-icons/bi";
 import { useSelector } from "react-redux";
-import MenuComp from "./MenuComp";
 import hackers from "../assets/Hackers.svg";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { AiOutlineClose } from "react-icons/ai";
 import { HashLink as Link } from "react-router-hash-link";
 import { useLocation, useParams } from "react-router-dom";
 
 const Navbar = () => {
-  const userLogin = useSelector((state) => state.userLogin);
-  const { hackUser } = userLogin;
+
   const [navbar, setNavbar] = useState("transparent");
   const [menuOpen, setMenuOpen] = useState(false);
   const { hash } = useLocation();
