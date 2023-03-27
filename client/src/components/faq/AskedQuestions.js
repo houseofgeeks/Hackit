@@ -16,7 +16,7 @@ const AskedQuestions = () => {
     {
       question: "Can we register as a team?",
       answer:
-        "Sure you can register as a team and can take part in the event alone too. The cap on the number of team members is limited to 4 per team.",
+        "Sure you can register as a team and can take part in the event alone too. The cap on the number of team members is limited to 5 per team.",
       id: 1,
     },
     {
@@ -40,7 +40,7 @@ const AskedQuestions = () => {
     {
       question: "What is the registration procedure?",
       answer:
-        "Anyone who meets the conditions set for participating in this event can register on the official website of House of Hackers (https://houseofhackers.tech) till the last date i.e. 6 Apr.",
+        "Anyone who meets the conditions set for participating in this event can register on the official website of House of Hackers (https://houseofhackers.tech) till the last date i.e. 5 Apr.",
       id: 5,
     },
   ];
