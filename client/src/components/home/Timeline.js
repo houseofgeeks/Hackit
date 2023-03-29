@@ -70,7 +70,7 @@ const Timeline = () => {
             RESULT DECLARATION
           </h1>
           <p >
-            The ultimate genius will be revealed by our Judging Panel on 17th
+            The ultimate hacker will be revealed by our Judging Panel on 17th
             April 2023
           </p>
         </VerticalTimelineElement>
