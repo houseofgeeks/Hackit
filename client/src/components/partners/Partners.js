@@ -4,8 +4,9 @@ import hack2skill from "../../assets/hack2skill.png";
 import snapper from "../../assets/snapper.png";
 import jetBrains from '../../assets/jetBrains.png';
 import tezos from '../../assets/tezos.png';
-import foundership from '../../assets/foundership.jpeg';
+import foundership from '../../assets/foundership.png';
 import xyz from '../../assets/xyz.jpeg';
+import rosenfeld from '../../assets/rosenfeld.png';
 const Partners = () => {
   const sponsorsData = [
     {
@@ -42,6 +43,12 @@ const Partners = () => {
       type: "Domain Partner",
       name: ".xyz",
       img: xyz,
+    }, 
+    {
+      type: "Knowledge Partner",
+      name: "Rosenfeld",
+      img: rosenfeld,
+      url: "http://rosenfeldmedia.com"
     }
   ];
   return (
@@ -59,11 +66,12 @@ const Partners = () => {
               <h1 className="text-yellow-600 md:w-[450px] w-[100%] text-center bg-[rgba(255,255,255,0.1)] font-semibold font-[Urbanist] text-2xl px-6 py-2 rounded-md">
                 {sponsors.type}
               </h1>
+              <a href={sponsors.url} target="_blank">
               <img
                 className="md:max-w-[300px] max-w-[250px] mt-4"
                 src={sponsors.img}
                 alt=""
-              />
+              /></a>
             </div>
           );
         })}
