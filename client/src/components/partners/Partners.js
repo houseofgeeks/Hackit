@@ -5,6 +5,7 @@ import snapper from "../../assets/snapper.png";
 import jetBrains from '../../assets/jetBrains.png';
 import tezos from '../../assets/tezos.png';
 import foundership from '../../assets/foundership.jpeg';
+import xyz from '../../assets/xyz.jpeg';
 const Partners = () => {
   const sponsorsData = [
     {
@@ -37,6 +38,11 @@ const Partners = () => {
       name: "Hack 2 Skill",
       img: foundership,
     },
+    {
+      type: "Domain Partner",
+      name: ".xyz",
+      img: xyz,
+    }
   ];
   return (
     <div
