@@ -2,6 +2,9 @@ import threeway from "../../assets/threeway.png";
 import devdungeon from "../../assets/devdungeon.png";
 import hack2skill from "../../assets/hack2skill.png";
 import snapper from "../../assets/snapper.png";
+import jetBrains from '../../assets/jetBrains.png';
+import tezos from '../../assets/tezos.png';
+import foundership from '../../assets/foundership.jpeg';
 const Partners = () => {
   const sponsorsData = [
     {
@@ -18,6 +21,21 @@ const Partners = () => {
       type: "Platform Partner",
       name: "Hack 2 Skill",
       img: hack2skill,
+    },
+    {
+      type: "Academic Partner",
+      name: "Hack 2 Skill",
+      img: jetBrains,
+    },
+    {
+      type: "Prize Pool Partner",
+      name: "Hack 2 Skill",
+      img: tezos,
+    },
+    {
+      type: "Community Partner",
+      name: "Hack 2 Skill",
+      img: foundership,
     },
   ];
   return (
