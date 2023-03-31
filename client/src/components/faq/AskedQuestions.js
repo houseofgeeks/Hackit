@@ -16,7 +16,7 @@ const AskedQuestions = () => {
     {
       question: "Can we register as a team?",
       answer:
-        "Sure you can register as a team and can take part in the event alone too. The cap on the number of team members is limited to 5 per team.",
+        "Sure you can register as a team and can take part in the event alone too. The cap on the number of team members is limited to 4 per team.",
       id: 1,
     },
     {
