@@ -2,6 +2,7 @@ import { BsLinkedin } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { BsDiscord } from "react-icons/bs";
+import { BsWhatsapp } from "react-icons/bs";
 import { Link } from "react-router-dom";
 const RightFooter = () => {
   return (
@@ -26,6 +27,9 @@ const RightFooter = () => {
         </Link>
         <Link to={"https://discord.gg/nka7uTufy3"} target="_blank">
           <BsDiscord className="mx-2 text-3xl text-[#5562EA] cursor-pointer" />
+        </Link>
+<Link to={"http://nas.io/devs-dungeon"} target="_blank">
+          <BsWhatsapp className="mx-2 text-3xl text-[#25D366] cursor-pointer" />
         </Link>
       </div>
     </div>
