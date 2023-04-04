@@ -11,6 +11,7 @@ import cybrance from '../../assets/cybrance.png';
 import fueler from '../../assets/fueler.png';
 import streamyard from '../../assets/streamyard.png';
 import wolfram from '../../assets/wolfram.png';
+import desicrypto from '../../assets/desicrypto.png';
 
 const Partners = () => {
   const sponsorsData = [
@@ -48,6 +49,11 @@ const Partners = () => {
       type: "Ecosystem Partner",
       name: "Hack 2 Skill",
       img: [taskade, balsamiq, cybrance, fueler, streamyard, wolfram],
+    },
+    {
+      type: "Outreach Partner",
+      name: "Hack 2 Skill",
+      img: desicrypto,
     },
   ];
   return (
