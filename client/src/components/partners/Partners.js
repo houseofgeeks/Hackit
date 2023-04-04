@@ -5,8 +5,13 @@ import snapper from "../../assets/snapper.png";
 import jetBrains from '../../assets/jetBrains.png';
 import tezos from '../../assets/tezos.png';
 import foundership from '../../assets/foundership.png';
-import xyz from '../../assets/xyz.jpeg';
-import rosenfeld from '../../assets/rosenfeld.png';
+import taskade from '../../assets/taskade.png';
+import balsamiq from '../../assets/balsamiq.png';
+import cybrance from '../../assets/cybrance.png';
+import fueler from '../../assets/fueler.png';
+import streamyard from '../../assets/streamyard.png';
+import wolfram from '../../assets/wolfram.png';
+
 const Partners = () => {
   const sponsorsData = [
     {
@@ -40,16 +45,10 @@ const Partners = () => {
       img: foundership,
     },
     {
-      type: "Domain Partner",
-      name: ".xyz",
-      img: xyz,
-    }, 
-    {
-      type: "Knowledge Partner",
-      name: "Rosenfeld",
-      img: rosenfeld,
-      url: "http://rosenfeldmedia.com"
-    }
+      type: "Ecosystem Partner",
+      name: "Hack 2 Skill",
+      img: [taskade, balsamiq, cybrance, fueler, streamyard, wolfram],
+    },
   ];
   return (
     <div
@@ -67,11 +66,14 @@ const Partners = () => {
                 {sponsors.type}
               </h1>
               <a href={sponsors.url} target="_blank">
-              <img
-                className="md:max-w-[300px] max-w-[250px] mt-4"
-                src={sponsors.img}
-                alt=""
-              /></a>
+                <img
+                  className="md:max-w-[300px] max-w-[250px] mt-4"
+                  src={sponsors.img}
+                  alt=""
+                /></a>
+              {
+                sponsors.type === 'Ecosystem Partner' && sponsors.img.map((img, i) => <img className='md:max-w-[300px] max-w-[250px]' src={img} />)
+              }
             </div>
           );
         })}
