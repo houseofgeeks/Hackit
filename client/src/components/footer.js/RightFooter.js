@@ -25,11 +25,14 @@ const RightFooter = () => {
         >
           <BsTwitter className="mx-2 text-3xl text-[#1E9BEB] cursor-pointer" />
         </Link>
-        <Link to={"https://discord.gg/nka7uTufy3"} target="_blank">
+        <Link to={"https://discord.gg/QwVfq3n7"} target="_blank">
           <BsDiscord className="mx-2 text-3xl text-[#5562EA] cursor-pointer" />
         </Link>
-<Link to={"http://nas.io/devs-dungeon"} target="_blank">
+        <Link to={"http://nas.io/devs-dungeon"} target="_blank">
           <BsWhatsapp className="mx-2 text-3xl text-[#25D366] cursor-pointer" />
+        </Link>
+        <Link to={"https://www.linkedin.com/feed/update/urn:li:activity:7049339230203822081/"} target="_blank">
+          <BsLinkedin className="mx-2 text-3xl text-[#0077B5] cursor-pointer" />
         </Link>
       </div>
     </div>

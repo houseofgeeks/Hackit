@@ -12,6 +12,10 @@ import fueler from '../../assets/fueler.png';
 import streamyard from '../../assets/streamyard.png';
 import wolfram from '../../assets/wolfram.png';
 import desicrypto from '../../assets/desicrypto.png';
+import paycoin from '../../assets/paycoin.png';
+import quillbot from '../../assets/quillbot.webp';
+import thinkAgain from '../../assets/thinkAgain.png';
+import xyz from '../../assets/xyz.png';
 
 const Partners = () => {
   const sponsorsData = [
@@ -43,12 +47,17 @@ const Partners = () => {
     {
       type: "Community Partner",
       name: "Hack 2 Skill",
-      img: foundership,
+      img: [foundership,paycoin],
     },
     {
       type: "Ecosystem Partner",
       name: "Hack 2 Skill",
-      img: [taskade, balsamiq, cybrance, fueler, streamyard, wolfram],
+      img: [taskade, balsamiq, cybrance, fueler, streamyard, wolfram,xyz,thinkAgain],
+    },
+    {
+      type: "Knowledge Partner",
+      name: "Hack 2 Skill",
+      img: quillbot,
     },
     {
       type: "Outreach Partner",
@@ -78,7 +87,7 @@ const Partners = () => {
                   alt=""
                 /></a>
               {
-                sponsors.type === 'Ecosystem Partner' && sponsors.img.map((img, i) => <img className='md:max-w-[300px] max-w-[250px]' src={img} />)
+                (sponsors.type === 'Ecosystem Partner' || sponsors.type === 'Community Partner') && sponsors.img.map((img, i) => <img className='md:max-w-[300px] max-w-[250px]' src={img} />)
               }
             </div>
           );
