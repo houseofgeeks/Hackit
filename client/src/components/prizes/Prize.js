@@ -1,5 +1,6 @@
 import trophy from "../../assets/trophy.png";
 import PrizeCard from "./PrizeCard";
+import prizeBanner from '../../assets/prizes_banner.jpeg'
 const Prize = () => {
   const prizeData = [
     {
@@ -23,12 +24,8 @@ const Prize = () => {
       <h1 className="text-center mb-8 font-[Varela] text-[#ee2a7b] font-bold text-5xl">
         Prizes
       </h1>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  justify-center gap-14">
-        {prizeData.map((data) => {
-          return (
-            <PrizeCard type={data.type} amount={data.amount} img={data.img} />
-          );
-        })}
+      <div className="w-full flex items-center justify-center">
+        <img className="rounded-lg" src={prizeBanner} alt="" />
       </div>
     </div>
   );
