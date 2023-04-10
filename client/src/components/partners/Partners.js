@@ -18,7 +18,7 @@ import thinkAgain from '../../assets/thinkAgain.png';
 import xyz from '../../assets/xyz.png';
 
 const Partners = () => {
-  const sponsorsData = [
+  const sponsorsData = [ 
     {
       type: "Silver Sponsor",
       name: "Snapper Future Tech",
