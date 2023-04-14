@@ -1,6 +1,6 @@
 import trophy from "../../assets/trophy.png";
 import PrizeCard from "./PrizeCard";
-import prizeBanner from '../../assets/prizes_banner.jpeg'
+import prizeBanner from '../../assets/prize.png'
 const Prize = () => {
   const prizeData = [
     {
