@@ -6,6 +6,7 @@ const Clock = ({
   timerMinutes,
   timerSeconds,
   setCustomVariants,
+  countdown
 }) => {
   const timer = [
     {
@@ -30,7 +31,7 @@ const Clock = ({
   const handleMouseLeaved = () => setCustomVariants("default");
   return (
     <div>
-      <div className="flex items-center justify-center">
+      <div className={`flex items-center justify-center ${countdown && 'h-[100vh]'}`}>
         {timer.map((item, i) => {
           return (
             <section key={i} className="flex flex-col items-center mx-2 ">

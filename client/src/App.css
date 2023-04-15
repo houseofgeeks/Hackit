@@ -5,7 +5,9 @@
   box-sizing: border-box;
   /* cursor: none; */
 }
-
+.count{
+  background-image: url('./assets/countdown.png');
+}
 ::-webkit-scrollbar {
   width: 8px;
 }
