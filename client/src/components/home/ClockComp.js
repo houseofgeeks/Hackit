@@ -9,7 +9,7 @@ const ClockComp = ({ setCustomVariants }) => {
 
   let interval;
   const startTimer = () => {
-    const countDownDate = new Date("April 15,2023").getTime();
+    const countDownDate = new Date("April 16,2023").getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
@@ -17,7 +17,7 @@ const ClockComp = ({ setCustomVariants }) => {
 
       const days = Math.floor(distance / (24 * 60 * 60 * 1000));
       const hours = Math.floor(
-        (distance % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60)
+        (distance % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60) - 10
       );
       const minutes = Math.floor((distance % (60 * 60 * 1000)) / (1000 * 60));
       const seconds = Math.floor((distance % (60 * 1000)) / 1000);
