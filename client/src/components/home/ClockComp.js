@@ -24,6 +24,10 @@ const ClockComp = ({ setCustomVariants }) => {
 
       if (distance < 0) {
         clearInterval(interval.current);
+        setTimerDays(0);
+        setTimerHours(0);
+        setTimerMinutes(0);
+        setTimerSeconds(0);
       } else {
         setTimerDays(0);
         setTimerHours(0);
